@@ -10,6 +10,12 @@ int Odpoved1cast2;
 int kontrolaOdpovedi1cast2;
 
 
+char Otazka2 [] = "2. otazka: Ktery datovy typ v jazyce C slouzi typicky k ukladani celych cisel?";
+char Odpoved2;
+int Odpoved2cast2;
+int kontrolaOdpovedi2cast2;
+
+
 int VstupNEBOescape(){
 	
 	if (YesOrNoSTART == 'N') {
@@ -56,6 +62,28 @@ int kontrolaOdpovedi1(){
 	return Odpoved1cast2;
 	}
 	
+	
+	
+	
+	
+int kontrolaOdpovedi2(){
+	
+	
+	if (Odpoved2 == 'C'){
+	Odpoved2cast2 = 1;
+	
+	}
+	
+	
+	else {
+	Odpoved2cast2 = 0;
+	}
+	
+	
+	
+	return Odpoved2cast2;
+	}
+	
 
 
 
@@ -99,15 +127,43 @@ int main(){
 
 		else {
 			printf("Vyborne, spravne!\n");
+			printf("-------------------------------------------------------------------\n");
+		printf("%s\n", Otazka2);
+		printf("A) float\n");	
+		printf("B) char\n");
+		printf("C) int\n");
+		printf("D) double\n");	
+		printf("Zadejte odpoved A, B, C, nebo D: ");
+		scanf(" %c", &Odpoved2);
+		
+		int kontrolaOdpovedi2cast2 = kontrolaOdpovedi2();
+		
+		if (kontrolaOdpovedi2cast2 == 0){
+				printf("spatne :(\n");
+			
+		}
+		
+		else{
+			
+			printf("Vyborne, spravne!\n");
+			printf("-------------------------------------------------------------------\n");
+			
+			
+		}
+		
+		
+		
 			
 		}					
 			
 		}	
 	
 	
-	
+
+	system("PAUSE");	
 	
 	return 0;
+	
 }
 
 
