@@ -86,7 +86,9 @@ int main(){
 		printf("B) 8\n");
 		printf("C) 32\n");
 		printf("D) 1000\n");	
-		scanf("Zadejte odpoved A, B, C, nebo D: %c", &Odpoved1);
+		printf("Zadejte odpoved A, B, C, nebo D: ");
+		scanf(" %c", &Odpoved1);
+
 		
 		int kontrolaOdpovedi1cast2 = kontrolaOdpovedi1();
 		
