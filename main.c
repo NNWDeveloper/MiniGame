@@ -1,3 +1,7 @@
+// ====================================================================
+// SIMPLE IT QUIZ CODED IN C BY MATĚJ TRUXA - NNW Developer
+// ====================================================================
+
 #include <stdio.h>
 
 char YesOrNoSTART;
@@ -11,6 +15,10 @@ int Odpoved1cast2;
 char Otazka2 [] = "2. otazka: Ktery datovy typ v jazyce C slouzi typicky k ukladani celych cisel?";
 char Odpoved2;
 int Odpoved2cast2;
+
+char Otazka3 [] = "3. otazka: Ktery prikaz v Linuxu slouzi k zobrazeni aktualniho pracovniho adresare?";
+char Odpoved3;
+int Odpoved3cast2;
 
 int konecnaHodnotaProKonecAplikace;
 
@@ -44,6 +52,18 @@ int kontrolaOdpovedi2(){
         Odpoved2cast2 = 0;
     }
     return Odpoved2cast2;
+}
+
+
+int kontrolaOdpovedi3(){
+	if (Odpoved3 == 'D'){
+		Odpoved3cast2 = 1;
+	} else {
+		
+		int Odpoved3cast2 = 0;
+	}
+	
+	return Odpoved3cast2;
 }
 
 
@@ -112,8 +132,34 @@ int main(){
 
     printf("Vyborne, spravne!\n");
     printf("-------------------------------------------------------------------\n");
-
-
+    
+    
+    // OTAZKA 3.
+    
+    do {
+    	printf("%s\n", Otazka3);
+    	printf("A) ls\n");
+        printf("B) cd\n");
+        printf("C) cat\n");
+        printf("D) pwd\n");
+         printf("Zadejte odpoved A, B, C, nebo D: ");
+        scanf(" %c", &Odpoved3);
+        
+        Odpoved2cast2 = kontrolaOdpovedi3();
+        if (Odpoved2cast2 == 0){
+        	printf("spatne, zkus to znova :(\n");
+		}
+        
+	} while (Odpoved3cast2 == 0);
+	
+	 printf("Vyborne, spravne!\n");
+    printf("-------------------------------------------------------------------\n");
+    
+    
+    
+// ====================================================================
+// KONEC APLIKACE
+// ====================================================================
     printf("Pro ukonceni programu zadejte cislo: ");
     scanf("%d", &konecnaHodnotaProKonecAplikace);
 
