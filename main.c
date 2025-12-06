@@ -20,6 +20,12 @@ char Otazka3 [] = "3. otazka: Ktery prikaz v Linuxu slouzi k zobrazeni aktualnih
 char Odpoved3;
 int Odpoved3cast2;
 
+
+char Otazka4 [] = "4. otazka: Co oznacuje zkratka SSD ?";
+char Odpoved4;
+int Odpoved4cast2;
+
+
 int konecnaHodnotaProKonecAplikace;
 
 
@@ -60,10 +66,22 @@ int kontrolaOdpovedi3(){
 		Odpoved3cast2 = 1;
 	} else {
 		
-		int Odpoved3cast2 = 0;
+		Odpoved3cast2 = 0;
 	}
 	
 	return Odpoved3cast2;
+}
+
+
+int kontrolaOdpovedi4(){
+	if (Odpoved4 == 'A'){
+		Odpoved4cast2 = 1;
+	} else {
+		
+		Odpoved4cast2 = 0;
+	}
+	
+		return Odpoved4cast2;
 }
 
 
@@ -100,11 +118,14 @@ int main(){
         Odpoved1cast2 = kontrolaOdpovedi1();
 
         if (Odpoved1cast2 == 0){
+        	printf("-------------------------------------------------------------------\n");
             printf("spatne, zkus to znova :(\n");
+            printf("-------------------------------------------------------------------\n");
         }
 
     } while (Odpoved1cast2 == 0);
 
+	printf("-------------------------------------------------------------------\n");
     printf("Vyborne, spravne!\n");
     printf("-------------------------------------------------------------------\n");
 
@@ -125,11 +146,14 @@ int main(){
         Odpoved2cast2 = kontrolaOdpovedi2();
 
         if (Odpoved2cast2 == 0){
+        	printf("-------------------------------------------------------------------\n");
             printf("spatne, zkus to znova :(\n");
+            printf("-------------------------------------------------------------------\n");
         }
 
     } while (Odpoved2cast2 == 0);
 
+	printf("-------------------------------------------------------------------\n");
     printf("Vyborne, spravne!\n");
     printf("-------------------------------------------------------------------\n");
     
@@ -145,16 +169,44 @@ int main(){
          printf("Zadejte odpoved A, B, C, nebo D: ");
         scanf(" %c", &Odpoved3);
         
-        Odpoved2cast2 = kontrolaOdpovedi3();
-        if (Odpoved2cast2 == 0){
+        Odpoved3cast2 = kontrolaOdpovedi3();
+        if (Odpoved3cast2 == 0){
+        	printf("-------------------------------------------------------------------\n");
         	printf("spatne, zkus to znova :(\n");
+        	printf("-------------------------------------------------------------------\n");
 		}
         
 	} while (Odpoved3cast2 == 0);
 	
+	printf("-------------------------------------------------------------------\n");
 	 printf("Vyborne, spravne!\n");
     printf("-------------------------------------------------------------------\n");
+ 
+ 
+ 
+ // OTAZKA 4.
     
+    do {
+    	printf("%s\n", Otazka4);
+    	printf("A) Solid State Drive\n");
+        printf("B) Super Speed Disk\n");
+        printf("C) System Storage Device\n");
+        printf("D) Static Secure Drive\n");
+         printf("Zadejte odpoved A, B, C, nebo D: ");
+        scanf(" %c", &Odpoved4);
+        
+        Odpoved4cast2 = kontrolaOdpovedi4();
+        if (Odpoved4cast2 == 0){
+        	printf("-------------------------------------------------------------------\n");
+        	printf("spatne, zkus to znova :(\n");
+        	printf("-------------------------------------------------------------------\n");
+		}
+        
+	} while (Odpoved4cast2 == 0);
+	
+	printf("-------------------------------------------------------------------\n");
+	 printf("Vyborne, spravne!\n");
+    printf("-------------------------------------------------------------------\n");   
     
     
 // ====================================================================
